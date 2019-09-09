@@ -3,6 +3,7 @@
 //
 
 #include "trl/filter_range.h"
+#include "trl/map_range.h"
 #include "trl/range.h"
 #include <vector>
 
@@ -11,6 +12,7 @@ int main() {
 
   trl::range(v.begin(), v.end())
       .filter([](int a) { return a > 3; })
-      .filter([](int a) { return a < 7; })
+      .map([](int a) {return a * a; })
       .debug_print();
+
 }
